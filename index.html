@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <style>
+        .year-box {
+            width: max-content;
+            background-color: #C5E09B;
+            padding: 3px 14px;
+            border-radius: 3px;
+        }
+        .years-boxe-container {
+            display: grid;
+            grid-template-columns: 50% 50%;
+            padding: 12px;
+            grid-gap: 10px 0px;
+        }
+        .filtes-data {
+            width: 200px;
+            background-color: white;
+        }
+        .grid-view {
+            background-color: #F5F5F5;
+            display: flex;
+        }
+        .image-team > img {
+            width: 100%;
+        }
+        .team-layout-main {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-gap: 20px 20px;
+        }
+        .boxes_container{    
+            width: 100%;
+            padding: 20px;
+        }
+        .team-layout {
+            background-color: #fff;
+        }
+        .image-team {
+            background-color: #F2F2F2;
+            margin: 20px;
+        }
+        .active-year-box{
+            background-color: #7CBA21;
+        }
+        .filters-text {
+            text-align: center;
+            margin-bottom: 0px;
+            font-weight: normal;
+            border-bottom: 1px solid #eae2e2;
+            width: calc(100% - 20%);
+            margin: auto;
+            padding-bottom: 1px;
+        }
+        .divide_box {
+            padding-bottom: 12px;
+        }
+        .filters-main-text {
+            font-size: 16px;
+            padding: 8px;
+        }
+        .team-name {
+            color: #6a7de4;
+        }
+        .box-content {
+            padding: 0px 20px 16px;
+        }
+        .miss-internal{
+            font-weight: normal;
+        }
+        .miss-ids {
+            padding-left: 0px;
+            list-style-type: none;
+            font-weight: bold;
+        }
+        .black-heading {
+            font-weight: bold;
+            width: 150px;
+            display: inline-block;
+        }
+
+
+        @media screen and (max-width: 1000px) {
+            .team-layout-main{
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        @media screen and (max-width: 780px) {
+            .team-layout-main{
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        @media screen and (max-width: 780px) {
+            .team-layout-main{
+                grid-template-columns: repeat(1, 1fr);
+            }
+        }
+        @media screen and (max-width: 600px) {
+            .grid-view{
+                flex-direction: column;
+            }
+            .filtes-data{
+                width: calc(100% - 30%);
+                margin: auto;
+            }
+            .year-box{
+                margin: auto;
+            }
+        }
+        @media screen and (max-width: 500px) {
+            .filtes-data{
+                width: calc(100%);
+                margin: auto;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="grid-view">
+        <div class="filtes-data">
+            <h6 class="filters-main-text">Filters</h6>
+
+            <div class="divide_box">
+                <h6 class="filters-text">Launch Year</h6>
+                <div class="years-boxe-container">
+                    <div class="year-box active-year-box">2006</div>
+                    <div class="year-box">2006</div>
+                    <div class="year-box">2006</div>
+                    <div class="year-box">2006</div>
+                    <div class="year-box">2006</div>
+                    <div class="year-box">2006</div>
+                    <div class="year-box">2006</div>
+                    <div class="year-box">2006</div>
+                    <div class="year-box">2006</div>
+                </div>
+            </div>
+
+            <div class="divide_box">
+                <h6 class="filters-text">Successful Launch</h6>
+                <div class="years-boxe-container">
+                    <div class="year-box">True</div>
+                    <div class="year-box">False</div>
+                </div>
+            </div>
+
+            <div class="divide_box">
+                <h6 class="filters-text">Successful Landing</h6>
+                <div class="years-boxe-container">
+                    <div class="year-box">True</div>
+                    <div class="year-box">False</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="boxes_container">
+            <div class="team-layout-main">
+                <div class="team-layout">
+                    <div class="image-team">
+                        <img src="https://images2.imgbox.com/4f/e3/I0lkuJ2e_o.png" alt="IMG">
+                    </div>
+
+                    <div class="box-content">
+                        <p class="team-name">FalconSat #1</p>
+                        <ul class="miss-ids">
+                            <li>
+                                Mission Ids:
+                                <ul class="miss-internal">
+                                    <li>{{Mission Ids}}</li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                        <div class="similar-heading">
+                            <span class="black-heading">Launch Year:</span>
+                            <span class="blue-heading">2006</span>
+                        </div>
+                        <div class="similar-heading">
+                            <span class="black-heading">Successful Launch</span>
+                            <span class="blue-heading">False</span>
+                        </div>
+                        <div class="similar-heading">
+                            <span class="black-heading">SuccessfulLanding</span>
+                            <span class="blue-heading">False</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="team-layout">
+                    <div class="image-team">
+                        <img src="https://images2.imgbox.com/4f/e3/I0lkuJ2e_o.png" alt="IMG">
+                    </div>
+
+                    <div class="box-content">
+                        <p class="team-name">FalconSat #1</p>
+                        <ul class="miss-ids">
+                            <li>
+                                Mission Ids:
+                                <ul class="miss-internal">
+                                    <li>{{Mission Ids}}</li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                        <div class="similar-heading">
+                            <span class="black-heading">Launch Year:</span>
+                            <span class="blue-heading">2006</span>
+                        </div>
+                        <div class="similar-heading">
+                            <span class="black-heading">Successful Launch</span>
+                            <span class="blue-heading">False</span>
+                        </div>
+                        <div class="similar-heading">
+                            <span class="black-heading">SuccessfulLanding</span>
+                            <span class="blue-heading">False</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="team-layout">
+                    <div class="image-team">
+                        <img src="https://images2.imgbox.com/4f/e3/I0lkuJ2e_o.png" alt="IMG">
+                    </div>
+
+                    <div class="box-content">
+                        <p class="team-name">FalconSat #1</p>
+                        <ul class="miss-ids">
+                            <li>
+                                Mission Ids:
+                                <ul class="miss-internal">
+                                    <li>{{Mission Ids}}</li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                        <div class="similar-heading">
+                            <span class="black-heading">Launch Year:</span>
+                            <span class="blue-heading">2006</span>
+                        </div>
+                        <div class="similar-heading">
+                            <span class="black-heading">Successful Launch</span>
+                            <span class="blue-heading">False</span>
+                        </div>
+                        <div class="similar-heading">
+                            <span class="black-heading">SuccessfulLanding</span>
+                            <span class="blue-heading">False</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="team-layout">
+                    <div class="image-team">
+                        <img src="https://images2.imgbox.com/4f/e3/I0lkuJ2e_o.png" alt="IMG">
+                    </div>
+
+                    <div class="box-content">
+                        <p class="team-name">FalconSat #1</p>
+                        <ul class="miss-ids">
+                            <li>
+                                Mission Ids:
+                                <ul class="miss-internal">
+                                    <li>{{Mission Ids}}</li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                        <div class="similar-heading">
+                            <span class="black-heading">Launch Year:</span>
+                            <span class="blue-heading">2006</span>
+                        </div>
+                        <div class="similar-heading">
+                            <span class="black-heading">Successful Launch</span>
+                            <span class="blue-heading">False</span>
+                        </div>
+                        <div class="similar-heading">
+                            <span class="black-heading">SuccessfulLanding</span>
+                            <span class="blue-heading">False</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="team-layout">
+                    <div class="image-team">
+                        <img src="https://images2.imgbox.com/4f/e3/I0lkuJ2e_o.png" alt="IMG">
+                    </div>
+
+                    <div class="box-content">
+                        <p class="team-name">FalconSat #1</p>
+                        <ul class="miss-ids">
+                            <li>
+                                Mission Ids:
+                                <ul class="miss-internal">
+                                    <li>{{Mission Ids}}</li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                        <div class="similar-heading">
+                            <span class="black-heading">Launch Year:</span>
+                            <span class="blue-heading">2006</span>
+                        </div>
+                        <div class="similar-heading">
+                            <span class="black-heading">Successful Launch</span>
+                            <span class="blue-heading">False</span>
+                        </div>
+                        <div class="similar-heading">
+                            <span class="black-heading">SuccessfulLanding</span>
+                            <span class="blue-heading">False</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="team-layout">
+                    <div class="image-team">
+                        <img src="https://images2.imgbox.com/4f/e3/I0lkuJ2e_o.png" alt="IMG">
+                    </div>
+
+                    <div class="box-content">
+                        <p class="team-name">FalconSat #1</p>
+                        <ul class="miss-ids">
+                            <li>
+                                Mission Ids:
+                                <ul class="miss-internal">
+                                    <li>{{Mission Ids}}</li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                        <div class="similar-heading">
+                            <span class="black-heading">Launch Year:</span>
+                            <span class="blue-heading">2006</span>
+                        </div>
+                        <div class="similar-heading">
+                            <span class="black-heading">Successful Launch</span>
+                            <span class="blue-heading">False</span>
+                        </div>
+                        <div class="similar-heading">
+                            <span class="black-heading">SuccessfulLanding</span>
+                            <span class="blue-heading">False</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="team-layout">
+                    <div class="image-team">
+                        <img src="https://images2.imgbox.com/4f/e3/I0lkuJ2e_o.png" alt="IMG">
+                    </div>
+
+                    <div class="box-content">
+                        <p class="team-name">FalconSat #1</p>
+                        <ul class="miss-ids">
+                            <li>
+                                Mission Ids:
+                                <ul class="miss-internal">
+                                    <li>{{Mission Ids}}</li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                        <div class="similar-heading">
+                            <span class="black-heading">Launch Year:</span>
+                            <span class="blue-heading">2006</span>
+                        </div>
+                        <div class="similar-heading">
+                            <span class="black-heading">Successful Launch</span>
+                            <span class="blue-heading">False</span>
+                        </div>
+                        <div class="similar-heading">
+                            <span class="black-heading">SuccessfulLanding</span>
+                            <span class="blue-heading">False</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="team-layout">
+                    <div class="image-team">
+                        <img src="https://images2.imgbox.com/4f/e3/I0lkuJ2e_o.png" alt="IMG">
+                    </div>
+
+                    <div class="box-content">
+                        <p class="team-name">FalconSat #1</p>
+                        <ul class="miss-ids">
+                            <li>
+                                Mission Ids:
+                                <ul class="miss-internal">
+                                    <li>{{Mission Ids}}</li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                        <div class="similar-heading">
+                            <span class="black-heading">Launch Year:</span>
+                            <span class="blue-heading">2006</span>
+                        </div>
+                        <div class="similar-heading">
+                            <span class="black-heading">Successful Launch</span>
+                            <span class="blue-heading">False</span>
+                        </div>
+                        <div class="similar-heading">
+                            <span class="black-heading">SuccessfulLanding</span>
+                            <span class="blue-heading">False</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <script>
+
+        $(document).ready(function(){
+            $.ajax({
+                type : 'get',
+                url: 'https://api.spacexdata.com/v3/launches?limit=100',
+
+                success: function (data) {
+                    // console.log(data)
+                    data.forEach(function(loopData){
+                        console.log(loopData);
+
+                        `
+                        ${
+                            loopData.details != null ?
+                                `
+                                    <div class="div_elements">
+                                        
+                                    </div>
+                                `
+                            : false
+
+                        }
+                        `
+                    })
+                }
+            });
+        });
+        // alert("worked");
+    </script>
+</body>
+</html>
