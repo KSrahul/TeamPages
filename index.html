@@ -87,7 +87,9 @@
             display: inline-block;
         }
 
-
+        .year-box{
+            cursor: pointer;
+        }
         @media screen and (max-width: 1000px) {
             .team-layout-main{
                 grid-template-columns: repeat(3, 1fr);
@@ -436,6 +438,18 @@
                     })
                 }
             });
+
+
+
+        // Pure Js
+            document.querySelectorAll(".year-box").forEach(function(clickEle) {
+                clickEle.addEventListener("click", function(currentTarget) {
+                    document.querySelectorAll(".year-box").forEach(function(removeC){
+                        removeC.classList.remove("active-year-box");
+                    })
+                    this.classList.add("active-year-box")
+                })
+            })
         });
         // alert("worked");
     </script>
